@@ -3,14 +3,14 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 180294200579.dkr.ecr.ap-south-1.amazonaws.com
+      - aws ecr get-login-password --region eu-north-1 | docker login --username AWS --password-stdin 692859940582.dkr.ecr.eu-north-1.amazonaws.com
   build:
     commands:
       - docker build -t ai .
-      - docker tag ai:latest 180294200579.dkr.ecr.ap-south-1.amazonaws.com/ai:latest
+      - docker tag ai:latest 692859940582.dkr.ecr.eu-north-1.amazonaws.com/ai:latest
   post_build:
     commands:
-      - docker push 180294200579.dkr.ecr.ap-south-1.amazonaws.com/ai:latest
+      - docker push 692859940582.dkr.ecr.eu-north-1.amazonaws.com/ai:latest
       - echo Writing image definitions file...
       - printf '[{"name":"ai","imageUri":"%s"}]' 180294200579.dkr.ecr.ap-south-1.amazonaws.com/ai:latest > imagedefinitions.json   
 artifacts:
