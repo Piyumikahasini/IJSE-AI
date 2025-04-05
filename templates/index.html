@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank Marketing Data Input</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      body {
+        background-color: #f0f4f8;
+        margin: 0;
+        padding: 20px;
+        color: #2d3748;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      }
+
+      h1 {
+        color: #2c5282;
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 28px;
+        border-bottom: 2px solid #ebf4ff;
+        padding-bottom: 15px;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #4a5568;
+        font-size: 14px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        font-size: 16px;
+        background-color: #f8fafc;
+        transition: all 0.2s ease;
+      }
+
+      input:focus,
+      select:focus {
+        outline: none;
+        border-color: #4299e1;
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+        background-color: #fff;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 10px;
+      }
+
+      .form-row .form-group {
+        flex: 1;
+      }
+
+      .section-title {
+        color: #2c5282;
+        font-size: 18px;
+        margin: 30px 0 15px 0;
+        font-weight: 600;
+      }
+
+      .card {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 24px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+        margin-bottom: 24px;
+        border: 1px solid #e2e8f0;
+      }
+
+      button {
+        background-color:rgb(129, 249, 113);
+        color: white;
+        border: none;
+        padding: 14px 24px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+        box-shadow: 0 4px 6px rgba(49, 130, 206, 0.1);
+      }
+
+      button:hover {
+        background-color: #2b6cb0;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(49, 130, 206, 0.2);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .form-row {
+          flex-direction: column;
+          gap: 0;
+        }
+        
+        .container {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bank Client Data Form</h1>
+      <form id="bankForm">
+        <div class="card">
+          <div class="section-title">Personal Information</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="number" id="age" name="age" min="18" max="100" required placeholder="Enter your age" />
+            </div>
+            <div class="form-group">
+              <label for="job">Occupation</label>
+              <select id="job" name="job" required>
+                <option value="">Select occupation</option>
+                <option value="admin.">Admin</option>
+                <option value="blue-collar">Blue Collar</option>
+                <option value="entrepreneur">Entrepreneur</option>
+                <option value="housemaid">Housemaid</option>
+                <option value="management">Management</option>
+                <option value="retired">Retired</option>
+                <option value="self-employed">Self-employed</option>
+                <option value="services">Services</option>
+                <option value="student">Student</option>
+                <option value="technician">Technician</option>
+                <option value="unemployed">Unemployed</option>
+                <option value="unknown">Unknown</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="marital">Marital Status</label>
+              <select id="marital" name="marital" required>
+                <option value="">Select status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="unknown">Unknown</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="education">Education Level</label>
+              <select id="education" name="education" required>
+                <option value="">Select education</option>
+                <option value="primary">Primary</option>
+                <option value="secondary">Secondary</option>
+                <option value="tertiary">Tertiary</option>
+                <option value="unknown">Unknown</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Financial Information</div>
+          <div class="form-group">
+            <label for="default">Do you have credit in default?</label>
+            <select id="default" name="default" required>
+              <option value="">Please select</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="housing">Do you have a housing loan?</label>
+              <select id="housing" name="housing" required>
+                <option value="">Please select</option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="loan">Do you have a personal loan?</label>
+              <select id="loan" name="loan" required>
+                <option value="">Please select</option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        
+        <button type="submit">Submit Data</button>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById("bankForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        
+        // Show loading state
+        const submitBtn = this.querySelector("button[type='submit']");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Processing...";
+        
+        try {
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            const response = await fetch("http://localhost:80/predict", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Failed to fetch prediction");
+            }
+            
+            const result = await response.json();
+            
+            if (result.result) {
+                alert(`The model predicts: ${result.result === "yes" ? "Client will subscribe" : "Client will not subscribe"}`);
+            } else if (result.error) {
+                throw new Error(result.error);
+            } else {
+                throw new Error("No prediction returned from the server.");
+            }
+            
+        } catch (error) {
+            console.error("Error:", error);
+            alert(`Error: ${error.message}`);
+        } finally {
+            // Reset loading state
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Submit Data";
+        }
+    });
+    </script>
+  </body>
+</html>
